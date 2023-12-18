@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Calculations (Diameter only)</title>
+</head>
+<body>
+  <h1>Kalkulator Lingkaran (Diameter)</h1>
+  <form id="circle-form">
+    <h3>Input:</h3>
+    <label for="diameter">Diameter:</label>
+    <input type="number" id="diameter" name="diameter" placeholder="Enter diameter" required onchange="calculateCircle()">
+    <br>
+  </form>
+  <hr>
+  <p id="area-result">Area: N/A</p>
+  <p id="perimeter-result">Perimeter: N/A</p>
+  <br>
+  <h1>Lingkaran: Hitung Luas dan Keliling</h1>
+  <form id="lingkaran-form">
+    <h3>Masukkan Jari-jari:</h3>
+    <input type="number" id="jari-jari" name="jari-jari" placeholder="Masukkan jari-jari dalam satuan meter" required onchange="hitunglingkaran ()">
+  </form>
+  <hr>
+  <p id="luas-result">Luas: Belum dihitung</p>
+  <p id="keliling-result">Keliling: Belum dihitung</p>
+
+
+  <script>
+    function calculateCircle() {
+      let diameter = parseFloat(document.getElementById("diameter").value);
+
+      const radius = diameter / 2;
+      let area = Math.PI * radius * radius;
+      let perimeter = Math.PI * diameter;
+ 
+      document.getElementById("area-result").textContent = `Area: ${area.toFixed(2)}`;
+      document.getElementById("perimeter-result").textContent = `Perimeter: ${perimeter.toFixed(2)}`;
+    }
+
+    function hitungLingkaran() {
+      let form = document.getElementById("lingkaran-form");
+      let jariInput = document.getElementById("jari-jari");
+
+      let jari = parseFloat(jariInput.value);
+
+      let PI = Math.PI;
+
+      let luas = PI * jari * jari;
+      let keliling = 2 * PI * jari;
+
+      document.getElementById("luas-result").textContent = `Luas: ${luas.toFixed(2)} meter persegi`;
+      document.getElementById("keliling-result").textContent = `Keliling: ${keliling.toFixed(2)} meter`;
+    }
+
+    document.getElementById("diameter").addEventListener("change", calculateCircle);
+    document.getElementById("jari-jari").addEventListener("change", hitungLingkaran);
+  </script>
+</body>
+</html> 
