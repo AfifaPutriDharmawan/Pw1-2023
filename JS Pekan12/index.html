@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+  body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: skyblue;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 40px;
+  background-color: #f5f5f5;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid skyblue;
+}
+
+button {
+  margin-top: 20px;
+  background-color: skyblue;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="button" onclick="validateLogin()">Login</button>
+    </form>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>
